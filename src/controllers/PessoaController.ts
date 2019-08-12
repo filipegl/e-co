@@ -16,12 +16,13 @@ class PessoaController {
       return res.status(422).json({ errors: errorsValidation.array() })
     }
 
-    Pessoa.findOne({ dni: req.body.dni }, function (
+    Pessoa.findOne({ dni: req.body.dni }, async function (
       err: Object,
       value: PessoaInterface
     ) {
       if (err) {
-        Promise.reject()
+        console.log('error', err)
+        return res.sendStatus(500)
       } else if (value) {
         return res.status(422).json({
           error: {
@@ -31,12 +32,12 @@ class PessoaController {
             location: 'body'
           }
         })
+      } else {
+        const pessoa = await Pessoa.create(req.body)
+
+        return res.json(pessoa)
       }
     })
-
-    const pessoa = await Pessoa.create(req.body)
-
-    return res.status(201).json(pessoa)
   }
 }
 
