@@ -15,4 +15,4 @@ A aplicação está configurada para rodar na porta 3333
 2. Digite `yarn start` para iniciar a aplicação.
 3. Faça requisições em [localhost:3333](http://www.localhost:3333/)
 
-Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/package.json) no postman.
+Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/daca19.2.postman_collection.json) no postman.
