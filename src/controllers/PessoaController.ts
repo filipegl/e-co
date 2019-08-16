@@ -33,6 +33,7 @@ class PessoaController {
           }
         })
       } else {
+        req.body.isDeputado = false
         const pessoa = await Pessoa.create(req.body)
 
         return res.json(pessoa)
