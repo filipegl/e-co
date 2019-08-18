@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6cd1ebc5-f61e-4fad-9ca0-8a3017ae19e6",
+		"_postman_id": "b9fd4a91-35cf-402a-88a5-08c6d00dedd9",
 		"name": "daca19.2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,6 +10,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3333/pessoas",
 					"protocol": "http",
@@ -25,15 +29,15 @@
 			"response": []
 		},
 		{
-			"name": "pessoa",
+			"name": "cadastra-pessoa",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -55,7 +59,37 @@
 			"response": []
 		},
 		{
-			"name": "deputado",
+			"name": "exibir-pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dni\": \"123456-7\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/exibir-pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"exibir-pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastra-deputado",
 			"request": {
 				"method": "POST",
 				"header": [

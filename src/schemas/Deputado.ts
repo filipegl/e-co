@@ -3,7 +3,7 @@ import { DeputadoInterface } from '../interfaces/Deputado'
 
 const DeputadoSchema = new Schema({
   dni: String,
-  dataInicio: Date,
+  dataInicio: String,
   qntLeis: String
 })
 

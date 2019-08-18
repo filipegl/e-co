@@ -46,6 +46,13 @@ class DeputadoController {
         const dni = req.body.dni
         await Pessoa.update({ dni }, { isDeputado: true })
         req.body.qntLeis = 0
+        req.body.dataInicio = `${req.body.dataInicio.substring(
+          0,
+          2
+        )}/${req.body.dataInicio.substring(
+          2,
+          4
+        )}/${req.body.dataInicio.substring(4, 8)}`
         const deputado = await Deputado.create(req.body)
         return res.json(deputado)
       }
