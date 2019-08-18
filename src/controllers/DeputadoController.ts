@@ -44,7 +44,7 @@ class DeputadoController {
         })
       } else {
         const dni = req.body.dni
-        await Pessoa.update({ dni }, { isDeputado: true })
+        await Pessoa.updateOne({ dni }, { isDeputado: true })
         req.body.qntLeis = 0
         req.body.dataInicio = `${req.body.dataInicio.substring(
           0,
