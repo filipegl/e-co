@@ -5,5 +5,5 @@ export interface PessoaInterface extends Document {
   estado: string
   interesses: string
   partido?: string
-  isDeputado?: Boolean
+  isDeputado?: boolean
 }

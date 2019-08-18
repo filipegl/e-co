@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3a218f03-48dc-4634-9e45-a74da729925d",
+		"_postman_id": "6cd1ebc5-f61e-4fad-9ca0-8a3017ae19e6",
 		"name": "daca19.2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,10 +10,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://localhost:3333/pessoas",
 					"protocol": "http",
@@ -55,6 +51,37 @@
 						"cadastrar-pessoa"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "deputado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dni\": \"123456-7\",\n\t\"dataInicio\": \"16082019\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/cadastrar-deputado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"cadastrar-deputado"
+					]
+				},
+				"description": "deputado"
 			},
 			"response": []
 		}

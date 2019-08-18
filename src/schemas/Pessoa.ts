@@ -1,6 +1,5 @@
 import { Schema, Model, model } from 'mongoose'
 import { PessoaInterface } from '../interfaces/Pessoa'
-import {DeputadoInterface} from '../interfaces/Deputado'
 
 const PessoaSchema = new Schema({
   nome: String,

@@ -6,7 +6,6 @@ import { PessoaInterface } from '../interfaces/Pessoa'
 class PessoaController {
   public async index (req: Request, res: Response): Promise<Response> {
     const pessoas = await Pessoa.find()
-
     return res.json(pessoas)
   }
 
@@ -17,9 +16,9 @@ class PessoaController {
     }
 
     Pessoa.findOne({ dni: req.body.dni }, async function (
-      err: Object,
+      err: Record<string, string>,
       value: PessoaInterface
-    ) {
+    ): Promise<Response> {
       if (err) {
         console.log('error', err)
         return res.sendStatus(500)
