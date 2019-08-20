@@ -2,13 +2,11 @@ import { Request, Response } from 'express'
 import { Partido } from '../schemas/Partido'
 import { validationResult } from 'express-validator'
 import { PartidoInterface } from '../interfaces/Partido'
-import { async } from 'rxjs/internal/scheduler/async';
 
 class PartidoController {
-
-  public async index(req: Request, res: Response): Promise<Response> {
+  public async index (req: Request, res: Response): Promise<Response> {
     const partidos = await Partido.find()
-    const partidosOrdered = partidos.sort((p1, p2) => {
+    const partidosOrdered = partidos.sort((p1, p2): number => {
       if (p1.nome > p2.nome) {
         return 1
       } else if (p1.nome < p2.nome) {
@@ -17,12 +15,15 @@ class PartidoController {
         return 0
       }
     })
-    const formatted = { "partidos": partidosOrdered.map((value: PartidoInterface) => value.nome).join(', ') }
+    const formatted = {
+      partidos: partidosOrdered
+        .map((value: PartidoInterface): string => value.nome)
+        .join(', ')
+    }
     return res.json(formatted)
-
   }
 
-  public async store(req: Request, res: Response): Promise<Response> {
+  public async store (req: Request, res: Response): Promise<Response> {
     const errorsValidation = validationResult(req)
     if (!errorsValidation.isEmpty()) {
       return res.status(422).json({ errors: errorsValidation.array() })

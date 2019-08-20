@@ -29,7 +29,53 @@
 			"response": []
 		},
 		{
-			"name": "cadastra-pessoa",
+			"name": "comissoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/comissoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"comissoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exibir-base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/exibir-base",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"exibir-base"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar-pessoa",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -89,7 +135,7 @@
 			"response": []
 		},
 		{
-			"name": "cadastra-deputado",
+			"name": "cadastrar-deputado",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -113,6 +159,68 @@
 					"port": "3333",
 					"path": [
 						"cadastrar-deputado"
+					]
+				},
+				"description": "deputado"
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar-partido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"CC\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/cadastrar-partido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"cadastrar-partido"
+					]
+				},
+				"description": "deputado"
+			},
+			"response": []
+		},
+		{
+			"name": "cadastra-comissao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tema\": \"KKO\",\n\t\"politicos\": \"123456-700,123456-733\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/cadastra-comissao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"cadastra-comissao"
 					]
 				},
 				"description": "deputado"
