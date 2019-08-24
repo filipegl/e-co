@@ -2,8 +2,8 @@ import { Request, Response } from 'express'
 import { Pessoa } from '../schemas/Pessoa'
 import { validationResult } from 'express-validator'
 import { PessoaInterface } from '../interfaces/Pessoa'
-import { PEC } from '../schemas/PEC'
-import { PECPLPInterface } from '../interfaces/PEC-PLP'
+import { PL } from '../schemas/PL'
+import { PLInterface } from '../interfaces/PL'
 
 class PECController {
   public async store (req: Request, res: Response): Promise<Response> {
@@ -37,10 +37,10 @@ class PECController {
           }
         })
       } else {
-        const qnt = (await PEC.find()).length + 1
-        req.body.codigo = 'PEC ' + qnt + '/' + req.body.ano
-        const pec = await PEC.create(req.body)
-        return res.json(pec)
+        const qnt = (await PL.find()).length + 1
+        req.body.codigo = 'PL ' + qnt + '/' + req.body.ano
+        const pl = await PL.create(req.body)
+        return res.json(pl)
       }
     })
   }

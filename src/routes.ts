@@ -5,9 +5,14 @@ import checkRegisterPessoas from './middlewares/checkRegisterPessoa'
 import checkRegisterDeputado from './middlewares/checkRegisterDeputado'
 import checkRegisterPartidos from './middlewares/checkRegisterPartido'
 import checkRegisterComissao from './middlewares/checkRegisterComissao'
+import checkRegisterPL from './middlewares/checkRegisterPL'
+import checkRegisterPECPLP from './middlewares/checkRegisterPECPLP'
 import CheckDNI from './middlewares/checkDNI'
 import PartidoController from './controllers/PartidoController'
 import ComissaoController from './controllers/ComissaoController'
+import PLController from './controllers/PLController'
+import PECController from './controllers/PECController'
+import PLPController from './controllers/PLPController'
 
 const routes = Router()
 
@@ -31,5 +36,9 @@ routes.post(
   ComissaoController.store
 )
 routes.get('/comissoes', ComissaoController.index)
+
+routes.post('/pl', checkRegisterPL, PLController.store)
+routes.post('/pec', checkRegisterPECPLP, PECController.store)
+routes.post('/plp', checkRegisterPECPLP, PLPController.store)
 
 export default routes

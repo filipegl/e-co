@@ -12,7 +12,7 @@ const PLPSchema = new Schema({
   artigos: String
 })
 
-export const PEC: Model<PECPLPInterface> = model<PECPLPInterface>(
+export const PLP: Model<PECPLPInterface> = model<PECPLPInterface>(
   'PLP',
   PLPSchema
 )

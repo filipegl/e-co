@@ -12,7 +12,7 @@ const PLSchema = new Schema({
   conclusivo: Boolean
 })
 
-export const PEC: Model<PLInterface> = model<PLInterface>(
+export const PL: Model<PLInterface> = model<PLInterface>(
   'PL',
   PLSchema
 )
