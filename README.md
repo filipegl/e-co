@@ -19,3 +19,18 @@ A aplicação está configurada para rodar na porta 3333
 3. Faça requisições em [localhost:3333](http://www.localhost:3333/)
 
 Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/daca19.2.postman_collection.json) no postman.
+
+## Anotações
+
+### TO DO
+
+fazer tabela:
+
+cadastrarPessoa(...) POST /pessoas \
+cadastrarDeputado(...) POST /deputado \
+exibirPessoa(...) GET /pessoas \
+cadastrarPartido(...) POST /partidos \
+exibirBase() GET /partidos \
+cadastrarComissao(...) POST /comissoes
+
+Cada comissao tem um array de DNIs dos políticos que fazem parte.

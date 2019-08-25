@@ -1,69 +1,217 @@
 {
 	"info": {
-		"_postman_id": "793859dc-3ce1-490f-a52a-dd5ab660c3e7",
+		"_postman_id": "d624ea02-b6d1-4cad-bff6-6d08a74fcf45",
 		"name": "daca19.2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "pessoas",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3333/pessoas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"pessoas"
-					]
+			"item": [
+				{
+					"name": "pessoas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoas by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoas?dni=123456-7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoas"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "123456-7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-7002330\",\n\t\"nome\" : \"filipe\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABCD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoas"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "partidos",
+			"item": [
+				{
+					"name": "partidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/partidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"partidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"EE\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/partidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"partidos"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "comissoes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3333/comissoes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"comissoes"
-					]
+			"item": [
+				{
+					"name": "comissoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/comissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"comissoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comissoes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tema\": \"KKE\",\n\t\"politicos\": \"123456-700,123456-733\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/comissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"comissoes"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "exibir-base",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3333/exibir-base",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"exibir-base"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "cadastrar-pessoa",
+			"name": "deputado",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -72,66 +220,6 @@
 						"name": "Content-Type",
 						"type": "text",
 						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"dni\": \"123456-7\",\n\t\"nome\" : \"filipe\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABCD\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3333/cadastrar-pessoa",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"cadastrar-pessoa"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "exibir-pessoa",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"dni\": \"123456-7\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3333/exibir-pessoa",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"exibir-pessoa"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "cadastrar-deputado",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
 					}
 				],
 				"body": {
@@ -139,76 +227,14 @@
 					"raw": "{\n\t\"dni\": \"123456-7\",\n\t\"dataInicio\": \"16082019\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3333/cadastrar-deputado",
+					"raw": "http://localhost:3333/deputado",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"cadastrar-deputado"
-					]
-				},
-				"description": "deputado"
-			},
-			"response": []
-		},
-		{
-			"name": "cadastrar-partido",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"CC\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3333/cadastrar-partido",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"cadastrar-partido"
-					]
-				},
-				"description": "deputado"
-			},
-			"response": []
-		},
-		{
-			"name": "cadastra-comissao",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"tema\": \"KKO\",\n\t\"politicos\": \"123456-700,123456-733\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3333/cadastra-comissao",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"cadastra-comissao"
+						"deputado"
 					]
 				},
 				"description": "deputado"
@@ -300,25 +326,6 @@
 					"port": "3333",
 					"path": [
 						"plp"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "partidos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3333/exibir-base",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3333",
-					"path": [
-						"exibir-base"
 					]
 				}
 			},

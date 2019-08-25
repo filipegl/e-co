@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
-import routes from './routes'
+import routes from './routes/routes'
 
 class App {
   public express: express.Application
