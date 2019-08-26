@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { validationResult } from 'express-validator'
-import { createPLP } from '../services/plp.service'
+import { createProposicao } from '../services/proposicao.service'
 
 class PLPController {
   public async store (req: Request, res: Response): Promise<Response> {
@@ -9,7 +9,7 @@ class PLPController {
       return res.status(422).json({ errors: errosValidation.array() })
     }
     try {
-      const plp = await createPLP(req)
+      const plp = await createProposicao(req, 'plp')
       return res.json(plp)
     } catch (e) {
       console.error(e)

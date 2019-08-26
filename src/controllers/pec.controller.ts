@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { validationResult } from 'express-validator'
-import { createPEC } from '../services/pec.service'
+import { createProposicao } from '../services/proposicao.service'
 
 class PECController {
   public async store (req: Request, res: Response): Promise<Response> {
@@ -9,7 +9,7 @@ class PECController {
       return res.status(422).json({ errors: errosValidation.array() })
     }
     try {
-      const pec = await createPEC(req)
+      const pec = await createProposicao(req, 'pec')
       return res.json(pec)
     } catch (e) {
       console.error(e)

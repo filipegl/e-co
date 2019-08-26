@@ -1,5 +1,5 @@
 import { PessoaInterface } from '../interfaces/Pessoa'
-import { Partido } from '../models/Partido'
+import { Partido } from '../models/partido.model'
 import { PartidoInterface } from '../interfaces/Partido'
 
 export async function createPartido (

@@ -1,7 +1,7 @@
-import { Pessoa } from '../models/Pessoa'
+import { Pessoa } from '../models/pessoa.model'
 import { PessoaInterface } from '../interfaces/Pessoa'
 import { DeputadoInterface } from '../interfaces/Deputado'
-import { Deputado } from '../models/Deputado'
+import { Deputado } from '../models/deputado.model'
 
 export async function createPessoa (
   body: PessoaInterface

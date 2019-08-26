@@ -1,5 +1,5 @@
-import { Pessoa } from '../models/Pessoa'
-import { Comissao } from '../models/Comissao'
+import { Pessoa } from '../models/pessoa.model'
+import { Comissao } from '../models/comissao.model'
 import { PessoaInterface } from '../interfaces/Pessoa'
 import { ComissaoInterface } from '../interfaces/Comissao'
 import { Request } from 'express'
