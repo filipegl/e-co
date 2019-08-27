@@ -26,7 +26,15 @@ const checkRegisterPECPLP = [
   check('ano')
     .not()
     .isEmpty()
-    .withMessage('undefined')
+    .custom((value: number): boolean => {
+      const year = new Date()
+      var ret = true
+      if (value < 1988 || value > year.getFullYear()) {
+        ret = false
+      }
+      return ret
+    })
+    .withMessage('Ano não pode ser anterior a 1988 ou posterior ao ano atual')
 ]
 
 export default checkRegisterPECPLP
