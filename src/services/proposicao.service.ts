@@ -66,12 +66,12 @@ export async function createProposicao (
   }
 }
 
-export async function getProjeto (req: Request, proposicao: string): Promise<Record<string, string>> {
+export async function getProjeto (codigo: string, proposicao: string): Promise<Record<string, string>> {
   var projeto = null
   var projetoFormatado = null
   switch (proposicao.toLowerCase()) {
     case 'plp':
-      projeto = await PLP.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PLP.findOne({ codigo: codigo }).catch(
         (err: Record<string, string>): Promise<PECPLPInterface> => {
           err.status = '500'
           throw err
@@ -80,10 +80,10 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }
@@ -93,7 +93,7 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       }
       break
     case 'pec':
-      projeto = await PEC.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PEC.findOne({ codigo: codigo }).catch(
         (err: Record<string, string>): Promise<PECPLPInterface> => {
           err.status = '500'
           throw err
@@ -102,10 +102,10 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }
@@ -115,7 +115,7 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       }
       break
     default:
-      projeto = await PL.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PL.findOne({ codigo: codigo }).catch(
         (err: Record<string, string>): Promise<PLInterface> => {
           err.status = '500'
           throw err
@@ -124,10 +124,10 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }

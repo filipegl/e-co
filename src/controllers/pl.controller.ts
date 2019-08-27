@@ -18,12 +18,9 @@ class PLController {
   }
 
   public async index (req: Request, res: Response): Promise<Response> {
-    const errosValidation = validationResult(req)
-    if (!errosValidation.isEmpty()) {
-      return res.status(422).json({ erros: errosValidation.array() })
-    }
+    const { codigo } = req.query
     try {
-      const projeto = await getProjeto(req, req.body.codigo.substring(0, 3))
+      const projeto = await getProjeto(codigo, codigo.substring(0, 3))
       return res.json(projeto)
     } catch (e) {
       console.error(e)
