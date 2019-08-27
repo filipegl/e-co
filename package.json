@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "eslint-utils": "^1.4.2",
     "express": "^4.16.4",
     "express-validator": "^6.1.1",
     "mongoose": "^5.4.19"
