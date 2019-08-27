@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d624ea02-b6d1-4cad-bff6-6d08a74fcf45",
+		"_postman_id": "348b6b41-7b8f-4f32-9fbf-b3e6a9c4db0a",
 		"name": "daca19.2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -13,10 +13,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "http://localhost:3333/pessoas",
 							"protocol": "http",
@@ -36,10 +32,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "http://localhost:3333/pessoas?dni=123456-7",
 							"protocol": "http",
@@ -100,10 +92,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "http://localhost:3333/partidos",
 							"protocol": "http",
@@ -159,10 +147,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "http://localhost:3333/comissoes",
 							"protocol": "http",
@@ -326,6 +310,105 @@
 					"port": "3333",
 					"path": [
 						"plp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"PEC 1/2019\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/pec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pl",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"PL 1/2019\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/pl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plp",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"PLP 1/2019\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/pec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pec"
 					]
 				}
 			},
