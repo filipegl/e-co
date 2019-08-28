@@ -4,7 +4,7 @@ import { DeputadoInterface } from '../interfaces/Deputado'
 const DeputadoSchema = new Schema({
   dni: String,
   dataInicio: String,
-  qntLeis: String
+  qntLeis: Number
 })
 
 export const Deputado: Model<DeputadoInterface> = model<DeputadoInterface>(

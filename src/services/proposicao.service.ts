@@ -168,9 +168,16 @@ export async function getProjeto (
         }
         throw e
       } else {
+        const conclusivo = (): string => {
+          if (projeto.conclusivo) {
+            return 'Conclusivo'
+          } else {
+            return 'Não Conclusivo'
+          }
+        }
         projetoObject = {
           projeto,
-          string: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}`
+          string: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${conclusivo()} - ${projeto.situacao}`
         }
       }
       break
