@@ -48,17 +48,17 @@ export async function createProposicao (
     req.body.interesses = req.body.interesses.split(',')
     switch (proposicao) {
       case 'plp':
-        qnt = (await PLP.find()).length + 1
+        qnt = (await PLP.find({ ano: req.body.ano })).length + 1
         req.body.codigo = 'PLP ' + qnt + '/' + req.body.ano
         propos = await PLP.create(req.body)
         break
       case 'pec':
-        qnt = (await PEC.find()).length + 1
+        qnt = (await PEC.find({ ano: req.body.ano })).length + 1
         req.body.codigo = 'PEC ' + qnt + '/' + req.body.ano
         propos = await PEC.create(req.body)
         break
       default:
-        qnt = (await PL.find()).length + 1
+        qnt = (await PL.find({ ano: req.body.ano })).length + 1
         req.body.codigo = 'PL ' + qnt + '/' + req.body.ano
         propos = await PL.create(req.body)
         break
