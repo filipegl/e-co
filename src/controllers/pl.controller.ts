@@ -18,7 +18,7 @@ class PLController {
   }
 
   public async index (req: Request, res: Response): Promise<Response> {
-    const { codigo } = req.body
+    const { codigo } = req.query
     try {
       const projeto = await getProjeto(codigo)
       return res.json({ projeto: projeto.string })
