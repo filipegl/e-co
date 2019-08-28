@@ -1,12 +1,11 @@
 import { Pessoa } from '../models/pessoa.model'
+import { Request } from 'express'
 import { PessoaInterface } from '../interfaces/Pessoa'
 import { DeputadoInterface } from '../interfaces/Deputado'
 import { Deputado } from '../models/deputado.model'
 
-export async function createPessoa (
-  body: PessoaInterface
-): Promise<PessoaInterface> {
-  const pessoa = await Pessoa.findOne({ dni: body.dni }).catch(
+export async function createPessoa (req: Request): Promise<PessoaInterface> {
+  const pessoa = await Pessoa.findOne({ dni: req.body.dni }).catch(
     (err: Record<string, string>): Promise<PessoaInterface> => {
       err.status = '500'
       throw err
@@ -25,8 +24,9 @@ export async function createPessoa (
     }
     throw e
   } else {
-    body.isDeputado = false
-    const novaPessoa = await Pessoa.create(body)
+    req.body.isDeputado = false
+    req.body.interesses = req.body.interesses.split(',')
+    const novaPessoa = await Pessoa.create(req.body)
 
     return novaPessoa
   }
@@ -36,7 +36,9 @@ export async function getAll (): Promise<PessoaInterface[]> {
   return Pessoa.find()
 }
 
-export async function getByDNI (dni: string): Promise<Record<string, string>> {
+export async function getByDNI (
+  dni: string
+): Promise<Record<string, PessoaInterface>> {
   if (dni.match(/^(\d)+-(\d)+$/)) {
     const pessoa = await Pessoa.findOne({ dni }).catch(
       (err: Record<string, string>): Promise<PessoaInterface> => {
@@ -45,6 +47,7 @@ export async function getByDNI (dni: string): Promise<Record<string, string>> {
       }
     )
     if (pessoa) {
+      var pessoaObject = null
       if (pessoa.isDeputado) {
         const deputado = await Deputado.findOne({ dni: pessoa.dni }).catch(
           (err: Record<string, string>): Promise<DeputadoInterface> => {
@@ -52,16 +55,19 @@ export async function getByDNI (dni: string): Promise<Record<string, string>> {
             throw err
           }
         )
-        return {
-          pessoa: `POL: ${pessoa.nome} - ${pessoa.dni} (${pessoa.estado}) - ${pessoa.partido} - Interesses: ${pessoa.interesses} - ${deputado.dataInicio} - ${deputado.qntLeis} Leis`
+        pessoaObject = {
+          pessoa,
+          string: `POL: ${pessoa.nome} - ${pessoa.dni} (${pessoa.estado}) - ${pessoa.partido} - Interesses: ${pessoa.interesses} - ${deputado.dataInicio} - ${deputado.qntLeis} Leis`
         }
       } else {
-        return {
-          pessoa: `${pessoa.nome} - ${pessoa.dni} (${pessoa.estado}) - ${
+        pessoaObject = {
+          pessoa,
+          string: `${pessoa.nome} - ${pessoa.dni} (${pessoa.estado}) - ${
             pessoa.partido ? pessoa.partido : 'sem partido'
           } - Interesses: ${pessoa.interesses}`
         }
       }
+      return pessoaObject
     } else {
       const e = {
         error: {

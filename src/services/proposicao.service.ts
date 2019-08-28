@@ -6,7 +6,7 @@ import { PL } from '../models/pl.model'
 import { Request } from 'express'
 import { PECPLPInterface } from '../interfaces/PEC-PLP'
 import { PLInterface } from '../interfaces/PL'
-import { json } from 'body-parser'
+import { PropostaLegislativaInterface } from '../interfaces/PropostaLegislativa'
 
 export async function createProposicao (
   req: Request,
@@ -44,6 +44,8 @@ export async function createProposicao (
   } else {
     var propos = null
     var qnt = 0
+    req.body.situacao = 'EM VOTAÇÃO (CCJC)'
+    req.body.interesses = req.body.interesses.split(',')
     switch (proposicao) {
       case 'plp':
         qnt = (await PLP.find()).length + 1
@@ -66,12 +68,34 @@ export async function createProposicao (
   }
 }
 
-export async function getProjeto (req: Request, proposicao: string): Promise<Record<string, string>> {
+export async function updateProjeto (
+  projeto: PropostaLegislativaInterface,
+  situacao: string
+): Promise<void> {
+  const proposicao = projeto.codigo.substring(0, 3)
+
+  switch (proposicao) {
+    case 'PLP':
+      await PLP.updateOne({ codigo: projeto.codigo }, { situacao })
+      break
+    case 'PEC':
+      await PEC.updateOne({ codigo: projeto.codigo }, { situacao })
+      break
+    case 'PL ':
+      await PL.updateOne({ codigo: projeto.codigo }, { situacao })
+      break
+  }
+}
+
+export async function getProjeto (
+  codigo: string
+): Promise<Record<string, PropostaLegislativaInterface>> {
   var projeto = null
-  var projetoFormatado = null
+  var projetoObject = null
+  const proposicao = codigo.substring(0, 3)
   switch (proposicao.toLowerCase()) {
     case 'plp':
-      projeto = await PLP.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PLP.findOne({ codigo }).catch(
         (err: Record<string, string>): Promise<PECPLPInterface> => {
           err.status = '500'
           throw err
@@ -80,7 +104,7 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
             location: 'body'
@@ -89,11 +113,14 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
         }
         throw e
       } else {
-        projetoFormatado = { projeto: `Projeto de Lei Complementar -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}` }
+        projetoObject = {
+          projeto,
+          string: `Projeto de Lei Complementar -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}`
+        }
       }
       break
     case 'pec':
-      projeto = await PEC.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PEC.findOne({ codigo }).catch(
         (err: Record<string, string>): Promise<PECPLPInterface> => {
           err.status = '500'
           throw err
@@ -102,7 +129,7 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
             location: 'body'
@@ -111,11 +138,14 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
         }
         throw e
       } else {
-        projetoFormatado = { projeto: `Projeto de Emenda Constitucional -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}` }
+        projetoObject = {
+          projeto,
+          string: `Projeto de Emenda Constitucional -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}`
+        }
       }
       break
     default:
-      projeto = await PL.findOne({ codigo: req.body.codigo }).catch(
+      projeto = await PL.findOne({ codigo }).catch(
         (err: Record<string, string>): Promise<PLInterface> => {
           err.status = '500'
           throw err
@@ -124,7 +154,7 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
       if (!projeto) {
         const e = {
           error: {
-            value: req.body.codigo,
+            value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
             location: 'body'
@@ -133,9 +163,12 @@ export async function getProjeto (req: Request, proposicao: string): Promise<Rec
         }
         throw e
       } else {
-        projetoFormatado = { projeto: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}` }
+        projetoObject = {
+          projeto,
+          string: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${projeto.artigos} - ${projeto.situacao}`
+        }
       }
       break
   }
-  return projetoFormatado
+  return projetoObject
 }

@@ -70,3 +70,7 @@ export async function createComissao (req: Request): Promise<ComissaoInterface> 
 export async function getAll (): Promise<ComissaoInterface[]> {
   return Comissao.find()
 }
+
+export async function getByTema (tema: string): Promise<ComissaoInterface> {
+  return Comissao.findOne({ tema })
+}

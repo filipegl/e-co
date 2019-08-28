@@ -6,13 +6,10 @@ const PLSchema = new Schema({
   ano: Number,
   codigo: String,
   ementa: String,
-  interesses: String,
+  interesses: [String],
   situacao: String,
   url: String,
   conclusivo: Boolean
 })
 
-export const PL: Model<PLInterface> = model<PLInterface>(
-  'PL',
-  PLSchema
-)
+export const PL: Model<PLInterface> = model<PLInterface>('PL', PLSchema)

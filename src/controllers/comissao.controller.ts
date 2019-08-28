@@ -18,7 +18,7 @@ class ComissaoController {
       return res.json(comissao)
     } catch (e) {
       console.error(e)
-      return res.status(e.status).json(e.error)
+      return res.status(e.status).json({ error: e.error })
     }
   }
 }

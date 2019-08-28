@@ -6,7 +6,7 @@ const PECSchema = new Schema({
   ano: Number,
   codigo: String,
   ementa: String,
-  interesses: String,
+  interesses: [String],
   situacao: String,
   url: String,
   artigos: String

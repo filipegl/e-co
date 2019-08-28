@@ -1,5 +1,4 @@
-import { Document } from 'mongoose'
 import { PropostaLegislativaInterface } from './PropostaLegislativa'
-export interface PECPLPInterface extends Document, PropostaLegislativaInterface {
+export interface PECPLPInterface extends PropostaLegislativaInterface {
   artigos: string
 }

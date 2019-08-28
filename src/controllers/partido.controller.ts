@@ -22,7 +22,7 @@ class PartidoController {
       return res.json(partido)
     } catch (e) {
       console.error(e)
-      return res.status(e.status).json(e.error)
+      return res.status(e.status).json({ error: e.error })
     }
   }
 }

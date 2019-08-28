@@ -5,7 +5,7 @@ const PessoaSchema = new Schema({
   nome: String,
   dni: String,
   estado: String,
-  interesses: String,
+  interesses: [String],
   partido: String,
   isDeputado: Boolean
 })

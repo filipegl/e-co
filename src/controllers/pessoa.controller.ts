@@ -8,10 +8,10 @@ class PessoaController {
     if (dni) {
       try {
         const pessoa = await getByDNI(dni)
-        res.json(pessoa)
+        res.json({ pessoa: pessoa.string })
       } catch (e) {
         console.error(e)
-        return res.status(e.status).json(e.error)
+        return res.status(e.status).json({ error: e.error })
       }
     } else {
       const pessoas = await getAll()
@@ -26,11 +26,11 @@ class PessoaController {
     }
 
     try {
-      const pessoa = await createPessoa(req.body)
+      const pessoa = await createPessoa(req)
       return res.json(pessoa)
     } catch (e) {
       console.error(e)
-      return res.status(e.status).json(e.error)
+      return res.status(e.status).json({ error: e.error })
     }
   }
 }

@@ -13,7 +13,7 @@ class PLController {
       return res.json(pl)
     } catch (e) {
       console.error(e)
-      return res.status(e.status).json(e.error)
+      return res.status(e.status).json({ error: e.error })
     }
   }
 
@@ -23,11 +23,11 @@ class PLController {
       return res.status(422).json({ erros: errosValidation.array() })
     }
     try {
-      const projeto = await getProjeto(req, req.body.codigo.substring(0, 3))
-      return res.json(projeto)
+      const projeto = await getProjeto(req.body.codigo)
+      return res.json({ projeto: projeto.string })
     } catch (e) {
       console.error(e)
-      return res.status(e.status).json(e.error)
+      return res.status(e.status).json({ error: e.error })
     }
   }
 }

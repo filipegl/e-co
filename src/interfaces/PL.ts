@@ -1,5 +1,4 @@
-import { Document } from 'mongoose'
 import { PropostaLegislativaInterface } from './PropostaLegislativa'
-export interface PLInterface extends Document, PropostaLegislativaInterface {
+export interface PLInterface extends PropostaLegislativaInterface {
   conclusivo: boolean
 }

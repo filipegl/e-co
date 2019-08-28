@@ -7,15 +7,17 @@ import comissoesRoute from './comissoes.route'
 import plRoute from './pl.route'
 import plpRoute from './plp.route'
 import pecRoute from './pec.route'
+import votacaoRoute from './votacao.route'
 
 const routes = Router()
 
-routes.use('/pessoas', pessoasRoute)
+routes.use('/pessoa', pessoasRoute)
 routes.use('/deputado', deputadoRoute)
-routes.use('/partidos', partidosRoute)
-routes.use('/comissoes', comissoesRoute)
+routes.use('/partido', partidosRoute)
+routes.use('/comissao', comissoesRoute)
 routes.use('/pl', plRoute)
 routes.use('/plp', plpRoute)
 routes.use('/pec', pecRoute)
+routes.use('/votacao', votacaoRoute)
 
 export default routes

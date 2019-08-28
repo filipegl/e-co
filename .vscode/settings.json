@@ -1,5 +1,6 @@
 {
   "eslint.autoFixOnSave": true,
+  "prettier.eslintIntegration": true,
   "eslint.validate": [
     "javascript",
     { "language": "typescript", "autoFix": true }
@@ -12,5 +13,8 @@
     "**/dist": true,
     "**/coverge": true
   },
-  "typescript.referencesCodeLens.enabled": true
+  "typescript.referencesCodeLens.enabled": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
