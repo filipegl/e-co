@@ -107,7 +107,7 @@ export async function getProjeto (
             value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }
@@ -132,7 +132,7 @@ export async function getProjeto (
             value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }
@@ -157,7 +157,7 @@ export async function getProjeto (
             value: codigo,
             msg: 'Este projeto não existe',
             param: 'código',
-            location: 'body'
+            location: 'query'
           },
           status: 422
         }
