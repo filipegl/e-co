@@ -35,7 +35,11 @@ export async function createPessoa (req: Request): Promise<PessoaInterface> {
 export async function getAll (): Promise<PessoaInterface[]> {
   return Pessoa.find()
 }
-
+/**
+ * Retorna um objeto contendo a pessoa e sua representação em string.
+ * { pessoa, string }
+ * @param dni DNI da pessoa a ser retornada
+ */
 export async function getByDNI (
   dni: string
 ): Promise<Record<string, PessoaInterface>> {

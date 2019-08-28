@@ -87,6 +87,11 @@ export async function updateProjeto (
   }
 }
 
+/**
+ * Retorna um objeto contendo o projeto e sua representação em string.
+ * { projeto, string }
+ * @param codigo Código do projeto (e.g PL 1/2019)
+ */
 export async function getProjeto (
   codigo: string
 ): Promise<Record<string, PropostaLegislativaInterface>> {
