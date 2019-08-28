@@ -7,7 +7,7 @@ import { Deputado } from '../models/deputado.model'
 
 export async function votar (req: Request): Promise<string> {
   const { projeto } = await getProjeto(req.body.codigo)
-  const validation = 'EM VOTACAO'
+  const validation = 'EM VOTAÇÃO'
   if (!projeto.situacao.includes(validation)) {
     const e = {
       error: {
@@ -55,12 +55,15 @@ export async function votar (req: Request): Promise<string> {
         const { pessoa } = await getByDNI(dni)
         for (const projInteresse of projeto.interesses) {
           if (pessoa.interesses.includes(projInteresse)) {
-            situacao = aprovado
+            favoraveis += 1
             break
           }
         }
-        if (situacao === aprovado) break
       }
+      if (favoraveis > politicos.length / 2) {
+        situacao = aprovado
+      }
+      break
   }
   if (situacao === aprovado) {
     const deputado = await Deputado.findOne({ dni: projeto.dni })

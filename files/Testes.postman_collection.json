@@ -1,0 +1,1154 @@
+{
+	"info": {
+		"_postman_id": "824afa9f-dcb6-484d-87e9-cb525959f46f",
+		"name": "Testes",
+		"description": "testes e-co",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.cadastro pessoa",
+			"item": [
+				{
+					"name": "1.pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"nome\" : \"p1\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABC\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"nome\" : \"p2\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABC\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"nome\" : \"p3\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABC\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"nome\" : \"p4\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.pessoa.sem partido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-5\",\n\t\"nome\" : \"p5\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.cadastro deputado",
+			"item": [
+				{
+					"name": "1.deputado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"dataInicio\": \"16082019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/deputado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"deputado"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "2.deputado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"dataInicio\": \"16082019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/deputado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"deputado"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "3.deputado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"dataInicio\": \"16082019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/deputado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"deputado"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "4.deputado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"dataInicio\": \"16082019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/deputado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"deputado"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "5.erro.deputado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-5\",\n\t\"dataInicio\": \"16082019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/deputado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"deputado"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exibir pessoa",
+			"item": [
+				{
+					"name": "pessoa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoa by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/pessoa?dni=123456-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "123456-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoa by id 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/pessoa?dni=123456-5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "123456-5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pessoa by id erro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/pessoa?dni=123456-9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pessoa"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "123456-9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "baseGovernista",
+			"item": [
+				{
+					"name": "partido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"ABC\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/partido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"partido"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "partido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/partido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"partido"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comissao",
+			"item": [
+				{
+					"name": "comissao",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tema\": \"CCJC\",\n\t\"politicos\": \"123456-1,123456-2,123456-3,123456-4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/comissao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"comissao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "comissao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/comissao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"comissao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cadastro pls",
+			"item": [
+				{
+					"name": "1.pl",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"ano\": 2019,\n\t\"ementa\": \"ementa pl\",\n\t\"interesses\": \"Educacacao\",\n\t\"url\": \"www.com\",\n\t\"conclusivo\": \"true\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.pec",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"ano\": 2019,\n\t\"ementa\": \"ementa pec\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.plp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"ano\": 2019,\n\t\"ementa\": \"test plp\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/plp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"plp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.plp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"ano\": 2019,\n\t\"ementa\": \"test plp\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/plp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"plp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exibir pls",
+			"item": [
+				{
+					"name": "pl",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pl?codigo=PL 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pl"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PL 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec?codigo=PEC 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PEC 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec?codigo=PLP 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PLP 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plp2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec?codigo=PLP 2/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PLP 2/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pec.erro",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec?codigo=PEC 2/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PEC 2/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "votacao",
+			"item": [
+				{
+					"name": "votacao.pl",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"PL 1/2019\",\n\t\"statusGovernista\": \"LIVRE\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/votacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"votacao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "votacao.pec",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"PEC 1/2019\",\n\t\"statusGovernista\": \"LIVRE\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/votacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"votacao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "votacao.plp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"PLP 1/2019\",\n\t\"statusGovernista\": \"GOVERNISTA\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/votacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"votacao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "votacao.plp2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"PLP 2/2019\",\n\t\"statusGovernista\": \"OPOSICAO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/votacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"votacao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				},
+				{
+					"name": "votacao.plp2.erro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"PL 2/2019\",\n\t\"statusGovernista\": \"OPOSICAO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/votacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"votacao"
+							]
+						},
+						"description": "deputado"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exibir tramitacao",
+			"item": [
+				{
+					"name": "pl",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pl/tramitacao?codigo=PL 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pl",
+								"tramitacao"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PL 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec/tramitacao?codigo=PEC 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec",
+								"tramitacao"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PEC 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec/tramitacao?codigo=PLP 1/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec",
+								"tramitacao"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PLP 1/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plp2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec/tramitacao?codigo=PLP 2/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec",
+								"tramitacao"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PLP 2/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pec.erro",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/pec/tramitacao?codigo=PEC 2/2019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pec",
+								"tramitacao"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "PEC 2/2019"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

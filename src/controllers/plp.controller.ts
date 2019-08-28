@@ -27,6 +27,17 @@ class PLPController {
       return res.status(e.status).json({ error: e.error })
     }
   }
+
+  public async getTramitacao (req: Request, res: Response): Promise<Response> {
+    const { codigo } = req.query
+    try {
+      const proj = await getProjeto(codigo)
+      return res.json({ situacao: proj.projeto.situacao })
+    } catch (e) {
+      console.error(e)
+      return res.status(e.status).json({ error: e.error })
+    }
+  }
 }
 
 export default new PLPController()

@@ -6,5 +6,5 @@ const routes = Router()
 
 routes.post('/', checkRegisterPL, PLController.store)
 routes.get('/', PLController.index)
-
+routes.get('/tramitacao', PLController.getTramitacao)
 export default routes
