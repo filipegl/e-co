@@ -40,6 +40,7 @@ Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://
 |          /pec           | Registra novo projeto emenda constitucional                                                    |
 |          /plp           | Registra novo projeto de lei complementar                                                      |
 |  /pl?codigo=PL 1/2019   | Exibe o projeto de lei cujo o código é PL 1/2019                                               |
+|  /pl/tramitacao?codigo=PL 1/2019   | Exibe a tramitação do projeto de lei cujo o código é PL 1/2019                      |
 |        /votacao         | Realiza votação em determinada proposição. Recebe no body apenas "código" e "statusGovernista" |
 
 O corpo das requisições POST é o mesmo dos métodos da _facade_ definidos na [especificação](https://docs.google.com/document/d/e/2PACX-1vRMP1dmmr6DpXQECabYiR_pboa4P_XiXEywRX_wntWL0ego4KHlH25_Vsv0HB0_Io4nXn4lNI0eEaXU/pub)
