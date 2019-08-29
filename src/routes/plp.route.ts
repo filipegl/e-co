@@ -5,7 +5,7 @@ import PLPController from '../controllers/plp.controller'
 const routes = Router()
 
 routes.post('/', checkRegisterPECPLP, PLPController.store)
-routes.get('/', PLPController.index)
-routes.get('/tramitacao', PLPController.getTramitacao)
+routes.get('/:numero/:ano', PLPController.show)
+routes.get('/:numero/:ano/tramitacao', PLPController.getTramitacao)
 
 export default routes

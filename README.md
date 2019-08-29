@@ -29,19 +29,19 @@ Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://
 
 ## Documentação
 
-|          Rota           | Descrição                                                                                      |
-| :---------------------: | :--------------------------------------------------------------------------------------------- |
-|         /pessoa         | Exibe ou cadastra pessoas no sistema                                                           |
-| /pessoa?dni=123456789-0 | Exibe a pessoa cujo O DNI é 123456789-0                                                        |
-|        /partido         | Exibe (em ordem alfabética) ou cadastra os partidos no sistema                                 |
-|        /comissao        | Exibe ou cadastra comissão no sistema                                                          |
-|        /deputado        | Cadatra um novo deputado a partir de uma pessoa existente                                      |
-|           /pl           | Registra novo projeto de lei                                                                   |
-|          /pec           | Registra novo projeto emenda constitucional                                                    |
-|          /plp           | Registra novo projeto de lei complementar                                                      |
-|  /pl?codigo=PL 1/2019   | Exibe o projeto de lei cujo o código é PL 1/2019                                               |
-|  /pl/tramitacao?codigo=PL 1/2019   | Exibe a tramitação do projeto de lei cujo o código é PL 1/2019                      |
-|        /votacao         | Realiza votação em determinada proposição. Recebe no body apenas "código" e "statusGovernista" |
+|         Rota          | Metodos Habilitados | Descrição                                                                                                 |
+| :-------------------: | :-----------------: | :-------------------------------------------------------------------------------------------------------- |
+|        /pessoa        |      GET, POST      | **GET**: Exibe um array de pessoas cadastradas; **POST**: Cadastra pessoas no sistema;                    |
+|  /pessoa/123456789-0  |         GET         | **GET**: Exibe a pessoa cujo O DNI é 123456789-0;                                                         |
+|       /partido        |      GET, POST      | **GET**: Exibe a base governista (em ordem alfabética); **POST**: Cadastra os partidos no sistema;        |
+|       /comissao       |      GET, POST      | **GET**: Exibe um array das comissões; **POST**: Cadastra comissão no sistema;                            |
+|       /deputado       |        POST         | **POST**: Cadatra um novo deputado a partir de uma pessoa existente;                                      |
+|          /pl          |        POST         | **POST**: Registra novo projeto de lei;                                                                   |
+|         /pec          |        POST         | **POST**: Registra novo projeto emenda constitucional;                                                    |
+|         /plp          |        POST         | **POST**: Registra novo projeto de lei complementar;                                                      |
+|      /pl/1/2019       |         GET         | **GET**: Exibe o projeto de lei cujo o código é PL 1/2019;                                                |
+| /pl/1/2019/tramitacao |         GET         | **GET**: Exibe a tramitação do projeto de lei cujo o código é PL 1/2019;                                  |
+|       /votacao        |        POST         | **POST**: Realiza votação em determinada proposição. Recebe no body apenas `codigo` e `statusGovernista`; |
 
 O corpo das requisições POST é o mesmo dos métodos da _facade_ definidos na [especificação](https://docs.google.com/document/d/e/2PACX-1vRMP1dmmr6DpXQECabYiR_pboa4P_XiXEywRX_wntWL0ego4KHlH25_Vsv0HB0_Io4nXn4lNI0eEaXU/pub)
 

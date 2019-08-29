@@ -3,20 +3,19 @@ import { validationResult } from 'express-validator'
 import { createPessoa, getAll, getByDNI } from '../services/pessoa.service'
 
 class PessoaController {
-  public async index (req: Request, res: Response): Promise<Response> {
-    const { dni } = req.query
-    if (dni) {
-      try {
-        const pessoa = await getByDNI(dni)
-        res.json({ pessoa: pessoa.string })
-      } catch (e) {
-        console.error(e)
-        return res.status(e.status).json({ error: e.error })
-      }
-    } else {
-      const pessoas = await getAll()
-      return res.json(pessoas)
+  public async show (req: Request, res: Response): Promise<Response> {
+    const { dni } = req.params
+    try {
+      const pessoa = await getByDNI(dni)
+      res.json({ pessoa: pessoa.string })
+    } catch (e) {
+      console.error(e)
+      return res.status(e.status).json({ error: e.error })
     }
+  }
+  public async index (req: Request, res: Response): Promise<Response> {
+    const pessoas = await getAll()
+    return res.json(pessoas)
   }
 
   public async store (req: Request, res: Response): Promise<Response> {

@@ -17,8 +17,9 @@ class PLController {
     }
   }
 
-  public async index (req: Request, res: Response): Promise<Response> {
-    const { codigo } = req.query
+  public async show (req: Request, res: Response): Promise<Response> {
+    const { ano, numero } = req.params
+    const codigo = `PL ${numero}/${ano}`
     try {
       const projeto = await getProjeto(codigo)
       return res.json({ projeto: projeto.string })
@@ -29,7 +30,8 @@ class PLController {
   }
 
   public async getTramitacao (req: Request, res: Response): Promise<Response> {
-    const { codigo } = req.query
+    const { ano, numero } = req.params
+    const codigo = `PL ${numero}/${ano}`
     try {
       const proj = await getProjeto(codigo)
       return res.json({ situacao: proj.projeto.situacao })
