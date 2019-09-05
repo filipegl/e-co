@@ -1,9 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
 import routes from './routes/routes'
 
+dotenv.config()
 class App {
   public express: express.Application
 
@@ -21,7 +23,7 @@ class App {
   }
 
   private database (): void {
-    mongoose.connect(`mongodb://localhost:27017/e-co`, {
+    mongoose.connect(process.env.URL_BD, {
       useNewUrlParser: true
     })
   }

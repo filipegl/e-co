@@ -11,11 +11,11 @@ class ComissaoController {
   public async store (req: Request, res: Response): Promise<Response> {
     const errorsValidation = validationResult(req)
     if (!errorsValidation.isEmpty()) {
-      return res.status(422).json({ errors: errorsValidation.array() })
+      return res.status(400).json({ errors: errorsValidation.array() })
     }
     try {
       const comissao = await createComissao(req)
-      return res.json(comissao)
+      return res.status(201).json(comissao)
     } catch (e) {
       console.error(e)
       return res.status(e.status).json({ error: e.error })

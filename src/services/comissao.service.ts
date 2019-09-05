@@ -20,7 +20,7 @@ export async function createComissao (req: Request): Promise<ComissaoInterface> 
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 409
     }
     throw e
   } else {
@@ -44,7 +44,7 @@ export async function createComissao (req: Request): Promise<ComissaoInterface> 
             param: 'dni',
             location: 'body'
           },
-          status: 422
+          status: 404
         }
         throw e
       } else if (!pessoa.isDeputado) {
@@ -55,7 +55,7 @@ export async function createComissao (req: Request): Promise<ComissaoInterface> 
             msg: 'DNI de pessoa que não é política.',
             location: 'body'
           },
-          status: 422
+          status: 400
         }
         throw e
       }

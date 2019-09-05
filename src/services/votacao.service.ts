@@ -16,7 +16,7 @@ export async function votar (req: Request): Promise<string> {
         param: 'codigo',
         location: 'body'
       },
-      status: 422
+      status: 409
     }
     throw e
   }

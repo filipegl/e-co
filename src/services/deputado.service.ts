@@ -20,7 +20,7 @@ export async function createDeputado (
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 404
     }
     throw e
   } else if (pessoa.isDeputado) {
@@ -31,7 +31,7 @@ export async function createDeputado (
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 409
     }
     throw e
   } else if (!pessoa.partido) {
@@ -42,7 +42,7 @@ export async function createDeputado (
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 400
     }
     throw e
   } else {

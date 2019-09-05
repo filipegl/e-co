@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "824afa9f-dcb6-484d-87e9-cb525959f46f",
-		"name": "Testes",
+		"_postman_id": "fee48b80-6015-44e8-8b7d-ec85b46f601e",
+		"name": "Testes-DACA",
 		"description": "testes e-co",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -26,12 +26,10 @@
 							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"nome\" : \"p1\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABC\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -56,12 +54,10 @@
 							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"nome\" : \"p2\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABC\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -86,12 +82,10 @@
 							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"nome\" : \"p3\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABC\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -116,12 +110,10 @@
 							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"nome\" : \"p4\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\",\n\t\"partido\": \"ABD\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -146,12 +138,10 @@
 							"raw": "{\n\t\"dni\": \"123456-5\",\n\t\"nome\" : \"p5\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Saude\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -181,12 +171,10 @@
 							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"dataInicio\": \"16082019\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/deputado",
-							"protocol": "http",
+							"raw": "{{url}}/deputado",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"deputado"
 							]
@@ -212,12 +200,10 @@
 							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"dataInicio\": \"16082019\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/deputado",
-							"protocol": "http",
+							"raw": "{{url}}/deputado",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"deputado"
 							]
@@ -243,12 +229,10 @@
 							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"dataInicio\": \"16082019\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/deputado",
-							"protocol": "http",
+							"raw": "{{url}}/deputado",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"deputado"
 							]
@@ -274,12 +258,10 @@
 							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"dataInicio\": \"16082019\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/deputado",
-							"protocol": "http",
+							"raw": "{{url}}/deputado",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"deputado"
 							]
@@ -305,12 +287,10 @@
 							"raw": "{\n\t\"dni\": \"123456-5\",\n\t\"dataInicio\": \"16082019\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/deputado",
-							"protocol": "http",
+							"raw": "{{url}}/deputado",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"deputado"
 							]
@@ -329,13 +309,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pessoa"
 							]
@@ -348,21 +330,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa?dni=123456-1",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa/123456-1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pessoa"
-							],
-							"query": [
-								{
-									"key": "dni",
-									"value": "123456-1"
-								}
+								"pessoa",
+								"123456-1"
 							]
 						}
 					},
@@ -373,21 +352,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa?dni=123456-5",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa/123456-5",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pessoa"
-							],
-							"query": [
-								{
-									"key": "dni",
-									"value": "123456-5"
-								}
+								"pessoa",
+								"123456-5"
 							]
 						}
 					},
@@ -398,21 +374,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/pessoa?dni=123456-9",
-							"protocol": "http",
+							"raw": "{{url}}/pessoa/123456-9",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pessoa"
-							],
-							"query": [
-								{
-									"key": "dni",
-									"value": "123456-9"
-								}
+								"pessoa",
+								"123456-9"
 							]
 						}
 					},
@@ -440,12 +413,10 @@
 							"raw": "{\n\t\"nome\": \"ABC\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/partido",
-							"protocol": "http",
+							"raw": "{{url}}/partido",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"partido"
 							]
@@ -459,13 +430,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/partido",
-							"protocol": "http",
+							"raw": "{{url}}/partido",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"partido"
 							]
@@ -495,12 +468,10 @@
 							"raw": "{\n\t\"tema\": \"CCJC\",\n\t\"politicos\": \"123456-1,123456-2,123456-3,123456-4\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/comissao",
-							"protocol": "http",
+							"raw": "{{url}}/comissao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"comissao"
 							]
@@ -514,13 +485,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3333/comissao",
-							"protocol": "http",
+							"raw": "{{url}}/comissao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"comissao"
 							]
@@ -550,12 +523,10 @@
 							"raw": "{\n\t\"dni\": \"123456-1\",\n\t\"ano\": 2019,\n\t\"ementa\": \"ementa pl\",\n\t\"interesses\": \"Educacacao\",\n\t\"url\": \"www.com\",\n\t\"conclusivo\": \"true\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pl",
-							"protocol": "http",
+							"raw": "{{url}}/pl",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pl"
 							]
@@ -580,12 +551,10 @@
 							"raw": "{\n\t\"dni\": \"123456-2\",\n\t\"ano\": 2019,\n\t\"ementa\": \"ementa pec\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 3\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec",
-							"protocol": "http",
+							"raw": "{{url}}/pec",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pec"
 							]
@@ -610,14 +579,9 @@
 							"raw": "{\n\t\"dni\": \"123456-3\",\n\t\"ano\": 2019,\n\t\"ementa\": \"test plp\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 3\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/plp",
-							"protocol": "http",
+							"raw": "{{url}}plp",
 							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"plp"
+								"{{url}}plp"
 							]
 						}
 					},
@@ -640,12 +604,10 @@
 							"raw": "{\n\t\"dni\": \"123456-4\",\n\t\"ano\": 2019,\n\t\"ementa\": \"test plp\",\n\t\"interesses\": \"Saude\",\n\t\"url\": \"www.com\",\n\t\"artigos\": \"1, 2, 4\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/plp",
-							"protocol": "http",
+							"raw": "{{url}}/plp",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"plp"
 							]
@@ -671,20 +633,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pl?codigo=PL 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pl/1/2019",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pl"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PL 1/2019"
-								}
+								"pl",
+								"1",
+								"2019"
 							]
 						}
 					},
@@ -703,20 +659,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec?codigo=PEC 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pec/1/2019",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PEC 1/2019"
-								}
+								"pec",
+								"1",
+								"2019"
 							]
 						}
 					},
@@ -735,20 +685,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec?codigo=PLP 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/plp/1/2019",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PLP 1/2019"
-								}
+								"plp",
+								"1",
+								"2019"
 							]
 						}
 					},
@@ -767,20 +711,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec?codigo=PLP 2/2019",
-							"protocol": "http",
+							"raw": "{{url}}/plp/2/2019",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PLP 2/2019"
-								}
+								"plp",
+								"2",
+								"2019"
 							]
 						}
 					},
@@ -799,20 +737,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec?codigo=PEC 2/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pec/2/2019",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PEC 2/2019"
-								}
+								"pec",
+								"2",
+								"2019"
 							]
 						}
 					},
@@ -840,12 +772,10 @@
 							"raw": "{\n\t\"codigo\": \"PL 1/2019\",\n\t\"statusGovernista\": \"LIVRE\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/votacao",
-							"protocol": "http",
+							"raw": "{{url}}/votacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"votacao"
 							]
@@ -871,12 +801,10 @@
 							"raw": "{\n\t\"codigo\": \"PEC 1/2019\",\n\t\"statusGovernista\": \"LIVRE\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/votacao",
-							"protocol": "http",
+							"raw": "{{url}}/votacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"votacao"
 							]
@@ -902,12 +830,10 @@
 							"raw": "{\n\t\"codigo\": \"PLP 1/2019\",\n\t\"statusGovernista\": \"GOVERNISTA\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/votacao",
-							"protocol": "http",
+							"raw": "{{url}}/votacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"votacao"
 							]
@@ -933,12 +859,10 @@
 							"raw": "{\n\t\"codigo\": \"PLP 2/2019\",\n\t\"statusGovernista\": \"OPOSICAO\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/votacao",
-							"protocol": "http",
+							"raw": "{{url}}/votacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"votacao"
 							]
@@ -964,12 +888,10 @@
 							"raw": "{\n\t\"codigo\": \"PL 2/2019\",\n\t\"statusGovernista\": \"OPOSICAO\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/votacao",
-							"protocol": "http",
+							"raw": "{{url}}/votacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"votacao"
 							]
@@ -996,21 +918,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pl/tramitacao?codigo=PL 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pl/1/2019/tramitacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pl",
+								"1",
+								"2019",
 								"tramitacao"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PL 1/2019"
-								}
 							]
 						}
 					},
@@ -1029,21 +945,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec/tramitacao?codigo=PEC 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pec/1/2019/tramitacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pec",
+								"1",
+								"2019",
 								"tramitacao"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PEC 1/2019"
-								}
 							]
 						}
 					},
@@ -1062,21 +972,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec/tramitacao?codigo=PLP 1/2019",
-							"protocol": "http",
+							"raw": "{{url}}/plp/1/2019/tramitacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec",
+								"plp",
+								"1",
+								"2019",
 								"tramitacao"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PLP 1/2019"
-								}
 							]
 						}
 					},
@@ -1095,21 +999,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec/tramitacao?codigo=PLP 2/2019",
-							"protocol": "http",
+							"raw": "{{url}}/plp/2/2019/tramitacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
-								"pec",
+								"plp",
+								"2",
+								"2019",
 								"tramitacao"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PLP 2/2019"
-								}
 							]
 						}
 					},
@@ -1128,21 +1026,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3333/pec/tramitacao?codigo=PEC 2/2019",
-							"protocol": "http",
+							"raw": "{{url}}/pec/2/2019/tramitacao",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3333",
 							"path": [
 								"pec",
+								"2",
+								"2019",
 								"tramitacao"
-							],
-							"query": [
-								{
-									"key": "codigo",
-									"value": "PEC 2/2019"
-								}
 							]
 						}
 					},

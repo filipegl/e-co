@@ -19,7 +19,7 @@ export async function createPartido (
         param: 'nome',
         location: 'body'
       },
-      status: 422
+      status: 409
     }
     throw e
   } else {

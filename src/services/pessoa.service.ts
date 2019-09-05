@@ -20,7 +20,7 @@ export async function createPessoa (req: Request): Promise<PessoaInterface> {
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 409
     }
     throw e
   } else {
@@ -80,7 +80,7 @@ export async function getByDNI (
           param: 'dni',
           location: 'body'
         },
-        status: 422
+        status: 404
       }
       throw e
     }
@@ -92,7 +92,7 @@ export async function getByDNI (
         param: 'dni',
         location: 'query'
       },
-      status: 422
+      status: 400
     }
     throw e
   }

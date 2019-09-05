@@ -6,7 +6,7 @@ class VotacaoController {
   public async store (req: Request, res: Response): Promise<Response> {
     const errosValidation = validationResult(req)
     if (!errosValidation.isEmpty()) {
-      return res.status(422).json({ errors: errosValidation.array() })
+      return res.status(400).json({ errors: errosValidation.array() })
     }
     try {
       const result = await votar(req)

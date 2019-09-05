@@ -6,11 +6,11 @@ class PLPController {
   public async store (req: Request, res: Response): Promise<Response> {
     const errosValidation = validationResult(req)
     if (!errosValidation.isEmpty()) {
-      return res.status(422).json({ errors: errosValidation.array() })
+      return res.status(400).json({ errors: errosValidation.array() })
     }
     try {
       const plp = await createProposicao(req, 'plp')
-      return res.json(plp)
+      return res.status(201).json(plp)
     } catch (e) {
       console.error(e)
       return res.status(e.status).json({ error: e.error })

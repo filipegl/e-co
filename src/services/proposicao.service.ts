@@ -27,7 +27,7 @@ export async function createProposicao (
         param: 'dni',
         location: 'body'
       },
-      status: 422
+      status: 404
     }
     throw e
   } else if (!pessoa.isDeputado) {
@@ -38,7 +38,7 @@ export async function createProposicao (
         param: 'isDeputado',
         location: 'body'
       },
-      status: 422
+      status: 400
     }
     throw e
   } else {
@@ -114,7 +114,7 @@ export async function getProjeto (
             param: 'código',
             location: 'query'
           },
-          status: 422
+          status: 404
         }
         throw e
       } else {
@@ -139,7 +139,7 @@ export async function getProjeto (
             param: 'código',
             location: 'query'
           },
-          status: 422
+          status: 404
         }
         throw e
       } else {
@@ -164,7 +164,7 @@ export async function getProjeto (
             param: 'código',
             location: 'query'
           },
-          status: 422
+          status: 404
         }
         throw e
       } else {
@@ -177,7 +177,9 @@ export async function getProjeto (
         }
         projetoObject = {
           projeto,
-          string: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${projeto.ementa} - ${conclusivo()} - ${projeto.situacao}`
+          string: `Projeto de Lei -  ${projeto.codigo} - ${projeto.dni} - ${
+            projeto.ementa
+          } - ${conclusivo()} - ${projeto.situacao}`
         }
       }
       break
