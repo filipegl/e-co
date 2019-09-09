@@ -65,7 +65,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"dni\": \"123456-7\",\n\t\"nome\" : \"filipe\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABCD\"\n}"
+							"raw": "{\n\t\"dni\": \"123456-0\",\n\t\"nome\" : \"filipe\",\n\t\"estado\": \"PB\",\n\t\"interesses\": \"Educacao\",\n\t\"partido\": \"ABCD\",\n\t\"senha\": \"senha123\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/pessoa",
@@ -425,6 +425,47 @@
 					]
 				},
 				"description": "deputado"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "865a1f74-318b-4dcd-99d0-20ae776d984c",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", data.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dni\": \"123456-7\",\n\t\"senha\": \"senha123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
 			},
 			"response": []
 		}

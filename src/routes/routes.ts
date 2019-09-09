@@ -8,6 +8,7 @@ import plRoute from './pl.route'
 import plpRoute from './plp.route'
 import pecRoute from './pec.route'
 import votacaoRoute from './votacao.route'
+import loginRoute from './login.route'
 
 const routes = Router()
 
@@ -19,5 +20,6 @@ routes.use('/pl', plRoute)
 routes.use('/plp', plpRoute)
 routes.use('/pec', pecRoute)
 routes.use('/votacao', votacaoRoute)
+routes.use('/login', loginRoute)
 
 export default routes
