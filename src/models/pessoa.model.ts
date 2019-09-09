@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt'
 import { Schema, Model, model } from 'mongoose'
 import { PessoaInterface } from '../interfaces/Pessoa'
-import { comparaSenhas } from '../services/pessoa.service'
 
 const SALT_WORK_FACTOR = 10
 
