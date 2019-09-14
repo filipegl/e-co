@@ -372,6 +372,18 @@
 		},
 		{
 			"name": "deputado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a0380e37-e5e2-41fc-93a6-1b9d7dfb27be",
+						"exec": [
+							"pm.environment.set(\"token\", responseHeaders.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -380,6 +392,11 @@
 						"name": "Content-Type",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -436,8 +453,8 @@
 					"script": {
 						"id": "865a1f74-318b-4dcd-99d0-20ae776d984c",
 						"exec": [
-							"var data = JSON.parse(responseBody);",
-							"postman.setEnvironmentVariable(\"token\", data.token);"
+							"data = pm.response.json();",
+							"pm.environment.set(\"token\", data.token);"
 						],
 						"type": "text/javascript"
 					}

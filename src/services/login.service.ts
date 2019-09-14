@@ -7,7 +7,7 @@ export function generateToken (pessoa: PessoaInterface): string {
   return jwt.sign(
     { dni, nome, estado, partido, isDeputado },
     process.env.JWT_SECRET,
-    { subject: pessoa.dni, expiresIn: 7 * 24 * 60 * 60 } // 7 dias (em segundos)
+    { subject: dni, expiresIn: '1h' }
   )
 }
 export async function signin (body: Record<string, string>): Promise<string> {

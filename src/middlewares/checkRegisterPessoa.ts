@@ -14,7 +14,11 @@ const checkRegisterPessoas = [
     .isEmpty()
     .withMessage('DNI não pode ser vazia')
     .matches(/^(\d)+-(\d)+$/)
-    .withMessage('DNI deve conter apenas numeros e traços.')
+    .withMessage('DNI deve conter apenas numeros e traços.'),
+  check('senha')
+    .not()
+    .isEmpty()
+    .withMessage('Senha não pode ser vazia')
 ]
 
 export default checkRegisterPessoas
