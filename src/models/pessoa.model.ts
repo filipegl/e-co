@@ -11,6 +11,7 @@ const PessoaSchema = new Schema<PessoaInterface>({
   estado: String,
   interesses: [String],
   partido: String,
+  papel: String,
   isDeputado: Boolean
 })
 

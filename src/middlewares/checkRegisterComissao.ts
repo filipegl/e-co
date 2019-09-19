@@ -1,6 +1,25 @@
 import { check } from 'express-validator'
+import { Request, Response, NextFunction } from 'express'
 
-const checkRegisterDeputado = [
+const autenticacao = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
+  const { dni, papel } = res.locals.jwtPayload
+  if (papel !== 'admin' || dni !== req.body.dni) {
+    res.status(401).send({
+      error: {
+        msg: 'Não autorizado',
+        value: req.body.dni
+      }
+    })
+    return
+  }
+  next()
+}
+
+const checkRegisterComissao = [
   check('tema')
     .not()
     .isEmpty()
@@ -18,7 +37,8 @@ const checkRegisterDeputado = [
       })
       return ret
     })
-    .withMessage('DNI deve conter apenas numeros e traços.')
+    .withMessage('DNI deve conter apenas numeros e traços.'),
+  autenticacao
 ]
 
-export default checkRegisterDeputado
+export default checkRegisterComissao

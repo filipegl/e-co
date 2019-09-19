@@ -1,4 +1,23 @@
 import { check } from 'express-validator'
+import { Request, Response, NextFunction } from 'express'
+
+const autenticacao = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
+  const { dni, papel } = res.locals.jwtPayload
+  if (papel === 'comum' || dni !== req.body.dni) {
+    res.status(401).send({
+      error: {
+        msg: 'Não autorizado',
+        value: req.body.dni
+      }
+    })
+    return
+  }
+  next()
+}
 
 const checkRegisterPL = [
   check('dni')
@@ -34,7 +53,8 @@ const checkRegisterPL = [
       }
       return ret
     })
-    .withMessage('Ano não pode ser anterior a 1988 ou posterior ao ano atual')
+    .withMessage('Ano não pode ser anterior a 1988 ou posterior ao ano atual'),
+  autenticacao
 ]
 
 export default checkRegisterPL

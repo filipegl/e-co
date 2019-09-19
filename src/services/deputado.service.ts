@@ -46,7 +46,7 @@ export async function createDeputado (
     }
     throw e
   } else {
-    await Pessoa.updateOne({ dni: body.dni }, { isDeputado: true })
+    await Pessoa.updateOne({ dni: body.dni }, { isDeputado: true, papel: `deputado` })
     body.qntLeis = 0
     body.dataInicio = `${body.dataInicio.substring(
       0,

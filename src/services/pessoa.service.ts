@@ -25,6 +25,7 @@ export async function createPessoa (req: Request): Promise<PessoaInterface> {
     throw e
   } else {
     req.body.isDeputado = false
+    req.body.papel = `comum`
     req.body.interesses = req.body.interesses.split(',')
     const novaPessoa = await Pessoa.create(req.body)
 

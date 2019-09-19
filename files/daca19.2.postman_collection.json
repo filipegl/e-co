@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8645fafc-ba98-4fdb-87a4-7577bce29fcc",
+		"_postman_id": "a4a2ee0d-1316-4304-898d-f4ed3fef62c4",
 		"name": "daca19.2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -13,10 +13,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/pessoa",
 							"host": [
@@ -34,10 +30,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/pessoa/123456-7",
 							"host": [
@@ -79,7 +71,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "partidos",
@@ -89,10 +82,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/partido",
 							"host": [
@@ -107,6 +96,18 @@
 				},
 				{
 					"name": "partido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "671e03b8-14b2-4362-8c52-6ac295379303",
+								"exec": [
+									"pm.environment.set(\"token\", responseHeaders.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -115,6 +116,11 @@
 								"name": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -134,7 +140,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "comissoes",
@@ -144,10 +151,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/comissao",
 							"host": [
@@ -162,6 +165,18 @@
 				},
 				{
 					"name": "comissao",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "09cad2e7-1d74-4944-be32-6031fec3f4ab",
+								"exec": [
+									"pm.environment.set(\"token\", responseHeaders.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -170,6 +185,11 @@
 								"name": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -189,13 +209,26 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "proposicoes",
 			"item": [
 				{
 					"name": "pl",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "28113a6f-0387-4657-b4fc-ba8e3c5afeb1",
+								"exec": [
+									"pm.environment.set(\"token\", responseHeaders.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -203,6 +236,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -226,6 +264,18 @@
 				},
 				{
 					"name": "pec",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06ae7b14-0904-45da-94cf-ed2fd06499de",
+								"exec": [
+									"pm.environment.set(\"token\", responseHeaders.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -233,6 +283,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -256,6 +311,18 @@
 				},
 				{
 					"name": "plp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b81fb6af-6dc9-43fd-8083-32113b9bdc06",
+								"exec": [
+									"pm.environment.set(\"token\", responseHeaders.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -263,6 +330,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -368,7 +440,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "deputado",
@@ -418,6 +491,18 @@
 		},
 		{
 			"name": "votacao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30448b55-f289-4456-96ca-0abb4e6a808b",
+						"exec": [
+							"pm.environment.set(\"token\", responseHeaders.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -426,6 +511,11 @@
 						"name": "Content-Type",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -486,5 +576,6 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

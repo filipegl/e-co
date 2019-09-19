@@ -19,10 +19,10 @@ export const checkJwt = (
   }
 
   // a cada requisicao eh gerado um novo token com validade de 1h.
-  const { dni, nome, estado, partido, isDeputado } = jwtPayload
+  const { dni, nome, estado, partido, isDeputado, papel } = jwtPayload
   if (dni) {
     const newToken = jwt.sign(
-      { dni, nome, estado, partido, isDeputado },
+      { dni, nome, estado, partido, isDeputado, papel },
       process.env.JWT_SECRET,
       {
         subject: dni,

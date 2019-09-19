@@ -3,9 +3,9 @@ import { PessoaInterface } from '../interfaces/Pessoa'
 import { Pessoa } from '../models/pessoa.model'
 
 export function generateToken (pessoa: PessoaInterface): string {
-  const { dni, nome, estado, partido, isDeputado } = pessoa
+  const { dni, nome, estado, partido, isDeputado, papel } = pessoa
   return jwt.sign(
-    { dni, nome, estado, partido, isDeputado },
+    { dni, nome, estado, partido, isDeputado, papel },
     process.env.JWT_SECRET,
     { subject: dni, expiresIn: '1h' }
   )
