@@ -19,7 +19,7 @@ class PECController {
 
   public async show (req: Request, res: Response): Promise<Response> {
     const { ano, numero } = req.params
-    const codigo = `PLP ${numero}/${ano}`
+    const codigo = `PEC ${numero}/${ano}`
     try {
       const projeto = await getProjeto(codigo)
       return res.json({ projeto: projeto.string })

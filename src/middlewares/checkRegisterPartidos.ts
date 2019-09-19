@@ -7,11 +7,11 @@ const autenticacao = (
   next: NextFunction
 ): void => {
   const { dni, papel } = res.locals.jwtPayload
-  if (papel !== 'admin' || dni !== req.body.dni) {
+  if (papel !== 'admin') {
     res.status(401).send({
       error: {
         msg: 'Não autorizado',
-        value: req.body.dni
+        value: dni
       }
     })
     return
