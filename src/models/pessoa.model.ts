@@ -11,8 +11,7 @@ const PessoaSchema = new Schema<PessoaInterface>({
   estado: String,
   interesses: [String],
   partido: String,
-  papel: String,
-  isDeputado: Boolean
+  papel: String
 })
 
 PessoaSchema.pre('save', function (next): void {

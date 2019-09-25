@@ -23,7 +23,7 @@ export async function createDeputado (
       status: 404
     }
     throw e
-  } else if (pessoa.isDeputado) {
+  } else if (pessoa.papel === 'deputado') {
     const e = {
       error: {
         value: pessoa.dni,
@@ -46,7 +46,7 @@ export async function createDeputado (
     }
     throw e
   } else {
-    await Pessoa.updateOne({ dni: body.dni }, { isDeputado: true, papel: `deputado` })
+    await Pessoa.updateOne({ dni: body.dni }, { papel: `deputado` })
     body.qntLeis = 0
     body.dataInicio = `${body.dataInicio.substring(
       0,

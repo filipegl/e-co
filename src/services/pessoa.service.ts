@@ -24,7 +24,6 @@ export async function createPessoa (req: Request): Promise<PessoaInterface> {
     }
     throw e
   } else {
-    req.body.isDeputado = false
     req.body.papel = `comum`
     req.body.interesses = req.body.interesses.split(',')
     const novaPessoa = await Pessoa.create(req.body)
@@ -53,7 +52,7 @@ export async function getByDNI (
     )
     if (pessoa) {
       var pessoaObject = null
-      if (pessoa.isDeputado) {
+      if (pessoa.papel === 'deputado') {
         const deputado = await Deputado.findOne({ dni: pessoa.dni }).catch(
           (err: Record<string, string>): Promise<DeputadoInterface> => {
             err.status = '500'

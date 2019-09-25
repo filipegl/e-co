@@ -47,7 +47,7 @@ export async function createComissao (req: Request): Promise<ComissaoInterface> 
           status: 404
         }
         throw e
-      } else if (!pessoa.isDeputado) {
+      } else if (pessoa.papel !== 'deputado') {
         create = false
         const e = {
           error: {

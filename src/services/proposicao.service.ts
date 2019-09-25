@@ -30,12 +30,12 @@ export async function createProposicao (
       status: 404
     }
     throw e
-  } else if (!pessoa.isDeputado) {
+  } else if (pessoa.papel !== 'deputado') {
     const e = {
       error: {
-        value: req.body.isDeputado,
+        value: req.body.dni,
         msg: 'Esta pessoa não é deputado',
-        param: 'isDeputado',
+        param: 'dni',
         location: 'body'
       },
       status: 400

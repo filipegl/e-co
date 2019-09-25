@@ -7,6 +7,5 @@ export interface PessoaInterface extends Document {
   interesses: string[]
   partido?: string
   papel?: string
-  isDeputado?: boolean
   comparaSenha?: Function
 }
