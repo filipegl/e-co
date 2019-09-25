@@ -12,25 +12,29 @@ O projeto **E-Camara Organizada** ou **E-CO** é uma API REST que está sendo im
 
 ## Como rodar na sua máquina
 
-A aplicação está configurada para rodar na porta 3333.
+A aplicação está configurada para rodar na porta 3333, utilizando um banco de dados em nuvem.
 
 ### Banco de dados: MongoDB
 
-- Instale o [MongoDB](https://docs.mongodb.com/manual/installation/#tutorial-installation)
-- Deixe-o [rodando](https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes) localmente em [localhost:27017](http://www.localhost:27017/) (padrão)
+- Crie uma conta e configure o ambiente no [MongoDB](https://docs.atlas.mongodb.com/getting-started/).
+- No arquivo .arquivobd renomeie para .env e coloque a url na variável `URL_BD` junto das credenciais que você gerou no passo anterior.
 
 ### Execução
 
-1. Após iniciar o banco de dados, digite o comando `yarn` na pasta principal para instalar as dependências.
+1. Após configurar o acesso ao banco de dados, digite o comando `yarn` na pasta principal para instalar as dependências.
 2. Digite `yarn start` para iniciar a aplicação.
 3. Faça requisições em [localhost:3333](http://www.localhost:3333/)
 
-Para testar, importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/daca19.2.postman_collection.json) no postman.
+### Para testar:
+
+- Importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/daca19.2.postman_collection.json) no postman.
+- Importe o arquivo de ambiente [files/desenvolvimendo DACA.postman_environment.json](https://github.com/filipegl/e-co/blob/master/files/desenvolvimendo%20DACA.postman_environment.json) no postman.
 
 ## Documentação
 
 |         Rota          | Metodos Habilitados | Descrição                                                                                                 |
 | :-------------------: | :-----------------: | :-------------------------------------------------------------------------------------------------------- |
+|        /login         |      POST           | **POST**: Faz o login de uma pessoa no sistema;|
 |        /pessoa        |      GET, POST      | **GET**: Exibe um array de pessoas cadastradas; **POST**: Cadastra pessoas no sistema;                    |
 |  /pessoa/123456789-0  |         GET         | **GET**: Exibe a pessoa cujo O DNI é 123456789-0;                                                         |
 |       /partido        |      GET, POST      | **GET**: Exibe a base governista (em ordem alfabética); **POST**: Cadastra os partidos no sistema;        |
