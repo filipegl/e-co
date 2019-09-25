@@ -1,0 +1,2 @@
+URL_BD="<URL do mongodb>"
+JWT_SECRET="<chave da hash do jwt>"

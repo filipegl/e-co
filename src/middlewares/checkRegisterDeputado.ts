@@ -1,5 +1,6 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
+import checkDNI from './checkDNI'
 
 function changeToISO8601 (value: string): string {
   const dia = value.substring(0, 2)
@@ -9,11 +10,7 @@ function changeToISO8601 (value: string): string {
   return `${ano}-${mes}-${dia}`
 }
 
-const autorizacao = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): void => {
+const autorizacao = (req: Request, res: Response, next: NextFunction): void => {
   const { dni } = res.locals.jwtPayload
   if (dni !== req.body.dni) {
     res.status(401).send({
@@ -28,12 +25,7 @@ const autorizacao = (
 }
 
 const checkRegisterDeputado = [
-  check('dni')
-    .not()
-    .isEmpty()
-    .withMessage('DNI não pode ser vazia')
-    .matches(/^(\d)+-(\d)+$/)
-    .withMessage('DNI deve conter apenas numeros e traços.'),
+  checkDNI,
   check('dataInicio')
     .not()
     .isEmpty()

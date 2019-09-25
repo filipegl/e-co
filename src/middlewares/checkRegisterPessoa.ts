@@ -1,4 +1,5 @@
 import { check } from 'express-validator'
+import checkDNI from './checkDNI'
 
 const checkRegisterPessoas = [
   check('nome')
@@ -9,12 +10,7 @@ const checkRegisterPessoas = [
     .not()
     .isEmpty()
     .withMessage('Estado não pode ser vazio'),
-  check('dni')
-    .not()
-    .isEmpty()
-    .withMessage('DNI não pode ser vazia')
-    .matches(/^(\d)+-(\d)+$/)
-    .withMessage('DNI deve conter apenas numeros e traços.'),
+  checkDNI,
   check('senha')
     .not()
     .isEmpty()

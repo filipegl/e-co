@@ -1,11 +1,8 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
+import checkDNI from './checkDNI'
 
-const autorizacao = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): void => {
+const autorizacao = (req: Request, res: Response, next: NextFunction): void => {
   const { dni, papel } = res.locals.jwtPayload
   if (papel === 'comum' || dni !== req.body.dni) {
     res.status(401).send({
@@ -20,12 +17,7 @@ const autorizacao = (
 }
 
 const checkRegisterPL = [
-  check('dni')
-    .not()
-    .isEmpty()
-    .withMessage('dni não pode ser vazio ou nulo')
-    .matches(/^(\d)+-(\d)+$/)
-    .withMessage('DNI deve conter apenas numeros e traços.'),
+  checkDNI,
   check('ementa')
     .not()
     .isEmpty()

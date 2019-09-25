@@ -1,2 +1,0 @@
-URL_BD="<insira a url e suas credenciais que você criou na configuração do seu bd>"
-JWT_SECRET="<chave da hash do jwt>"
