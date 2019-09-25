@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
 
-const autenticacao = (
+const autorizacao = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -33,7 +33,7 @@ const checkRegisterPL = [
         value === 'GOVERNISTA' || value === 'OPOSICAO' || value === 'LIVRE'
     )
     .withMessage('statusGovernista deve ser GOVERNISTA, OPOSICAO ou LIVRE'),
-  autenticacao
+  autorizacao
 ]
 
 export default checkRegisterPL

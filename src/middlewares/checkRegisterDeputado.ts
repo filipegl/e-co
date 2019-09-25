@@ -9,7 +9,7 @@ function changeToISO8601 (value: string): string {
   return `${ano}-${mes}-${dia}`
 }
 
-const autenticacao = (
+const autorizacao = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -45,7 +45,7 @@ const checkRegisterDeputado = [
         Date.now() - Date.parse(changeToISO8601(value)) > 0
     )
     .withMessage('Data de início não pode estar no futuro'),
-  autenticacao
+  autorizacao
 ]
 
 export default checkRegisterDeputado

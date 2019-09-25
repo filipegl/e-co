@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
 
-const autenticacao = (
+const autorizacao = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -38,7 +38,7 @@ const checkRegisterComissao = [
       return ret
     })
     .withMessage('DNI deve conter apenas numeros e traços.'),
-  autenticacao
+  autorizacao
 ]
 
 export default checkRegisterComissao

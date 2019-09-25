@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
 
-const autenticacao = (
+const autorizacao = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -54,7 +54,7 @@ const checkRegisterPL = [
       return ret
     })
     .withMessage('Ano não pode ser anterior a 1988 ou posterior ao ano atual'),
-  autenticacao
+  autorizacao
 ]
 
 export default checkRegisterPL

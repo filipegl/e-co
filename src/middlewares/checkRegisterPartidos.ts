@@ -1,7 +1,7 @@
 import { check } from 'express-validator'
 import { Request, Response, NextFunction } from 'express'
 
-const autenticacao = (
+const autorizacao = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -24,7 +24,7 @@ const checkRegisterPartidos = [
     .not()
     .isEmpty()
     .withMessage('Nome não pode ser vazio ou nulo'),
-  autenticacao
+  autorizacao
 ]
 
 export default checkRegisterPartidos
