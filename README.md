@@ -14,7 +14,7 @@ O projeto **E-Camara Organizada** ou **E-CO** é uma API REST que está sendo im
 
 ## Como rodar na sua máquina
 
-A aplicação está configurada para rodar na porta 3333, utilizando um banco de dados em nuvem.
+A aplicação está configurada para rodar na porta 3333.
 
 ### Banco de dados: MongoDB
 
