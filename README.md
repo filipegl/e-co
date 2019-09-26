@@ -69,6 +69,14 @@ A rota de login faz com que seja gerado um token associado à pessoa logada. Ess
 
 A cada requisição que necessite de autorização, é gerado um novo token utilizando o payload do token antigo. Cada token tem duração de 1h. Isso quer dizer que se passar 1h sem nenhuma requisição, o token irá se expirar e será necessário fazer o login novamente.
 
+#### Como é feita a autenticação e a autorização?
+Ao chamar a rota de login, é gerado um token com os atributos do usuário passado devovido com response.  \
+Existe um *middleware* nas rotas que precisam de autorização que irá verificar se no header da requisição existe um token válido (token que não se expirou).
+Existem três tipos de pessoa: comum, deputado e admin. Esses tipos são definidos pelo atributo `papel` de pessoa.
+Para uma pessoa virar **admin**, o seu atributo precisa ser alterado manualmente pelo banco de dados.
+Por exemplo, se uma rota restringe (através do middleware) que apenas o admin possa fazer requisições, então ela irá verificar se o token foi emitido por alguém que tenha essa característica. \
+Os atributos da pessoa logada são encriptografadas dentro do token.
+
 ## Licença
 
 MIT License
