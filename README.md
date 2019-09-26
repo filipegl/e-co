@@ -23,7 +23,7 @@ A aplicação está configurada para rodar na porta 3333, utilizando um banco de
 
 ### Execução
 
-1. No arquivo .env insira uma chave qualquer para o JWT_SECRET
+1. No arquivo .env insira uma chave qualquer para o JWT_SECRET.
 2. Digite o comando `yarn` na pasta principal para instalar as dependências.
 3. Digite `yarn start` para iniciar a aplicação.
 4. Faça requisições em [localhost:3333](http://www.localhost:3333/)
@@ -62,11 +62,12 @@ Se houve alguma inconsistencia dos dados (e.g. cadastrar uma pessoa que já est�
 
 #### JSON Web Token
 
-A rota de login faz com que seja gerado um token associado à pessoa logada. Esse token garante que o usuário está autenticado. \
-Uma pessoa só pode virar deputado se ela própria estiver logada no sistema. \
-Um deputado só pode cadastrar seus projetos de lei (pl, pec ou plp) se ele próprio estiver logado no sistema. \
-Uma pessoa só pode realizar votação, cadastrar partido e cadastrar comissão se ela própria estiver logada no sistema e possuir papel de administrador(admin). \
-A cada requisição que necessite de autoriação, é gerado um novo token utilizando o payload do token antigo. Cada token tem duração de 1h. Isso quer dizer que se passar 1h sem nenhuma requisição, o token irá se expirar e será necessário fazer o login novamente.
+A rota de login faz com que seja gerado um token associado à pessoa logada. Esse token garante que o usuário está autenticado. Nas rotas que necessitem de autorização, este token é passado no header da requisição.
+- Uma pessoa só pode virar deputado se ela própria estiver logada no sistema.
+- Um deputado só pode cadastrar seus projetos de lei (pl, pec ou plp) se ele próprio estiver logado no sistema.
+- Uma pessoa só pode realizar votação, cadastrar partido e cadastrar comissão se ela própria estiver logada no sistema e possuir papel de administrador (admin).
+
+A cada requisição que necessite de autorização, é gerado um novo token utilizando o payload do token antigo. Cada token tem duração de 1h. Isso quer dizer que se passar 1h sem nenhuma requisição, o token irá se expirar e será necessário fazer o login novamente.
 
 ## Licença
 
