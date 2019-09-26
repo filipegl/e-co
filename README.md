@@ -28,7 +28,7 @@ A aplicação está configurada para rodar na porta 3333, utilizando um banco de
 3. Digite `yarn start` para iniciar a aplicação.
 4. Faça requisições em [localhost:3333](http://www.localhost:3333/)
 
-### Para testar:
+### Para testar
 
 - Importe o arquivo [files/daca19.2.postman_collection.json](https://github.com/filipegl/e-co/blob/master/files/daca19.2.postman_collection.json) no postman.
 - Importe o arquivo com as variáveis de ambiente [files/desenvolvimendo DACA.postman_environment.json](https://github.com/filipegl/e-co/blob/master/files/desenvolvimendo%20DACA.postman_environment.json) no postman.
@@ -40,15 +40,15 @@ A aplicação está configurada para rodar na porta 3333, utilizando um banco de
 |        /login         |        POST         | **POST**: Gera um novo token associado à pessoa;                                                                                                                               |
 |        /pessoa        |      GET, POST      | **GET**: Exibe um array de pessoas cadastradas; **POST**: Cadastra pessoas no sistema;                                                                                         |
 |  /pessoa/123456789-0  |         GET         | **GET**: Exibe a pessoa cujo O DNI é 123456789-0;                                                                                                                              |
-|       /partido        |      GET, POST      | **GET**: Exibe a base governista (em ordem alfabética); **POST**: Cadastra os partidos no sistema;                                                                             |
-|       /comissao       |      GET, POST      | **GET**: Exibe um array das comissões; **POST**: Cadastra comissão no sistema;                                                                                                 |
+|       /partido        |      GET, POST      | **GET**: Exibe a base governista (em ordem alfabética); **POST**: Cadastra os partidos no sistema; **Autorização**: É necessário que a pessoa que está logada tenha um papel de admin para cadastrar partidos; |
+|       /comissao       |      GET, POST      | **GET**: Exibe um array das comissões; **POST**: Cadastra comissão no sistema; **Autorização**: É necessário que a pessoa que está logada tenha um papel de admin para cadastrar comissao; |
 |       /deputado       |        POST         | **POST**: Cadatra um novo deputado a partir de uma pessoa existentes; **Autorização**: É necessário que o o dni da pessoa que irá ser deputada seja igual ao da pessoa logada; |
-|          /pl          |        POST         | **POST**: Registra novo projeto de lei;                                                                                                                                        |
-|         /pec          |        POST         | **POST**: Registra novo projeto emenda constitucional;                                                                                                                         |
-|         /plp          |        POST         | **POST**: Registra novo projeto de lei complementar;                                                                                                                           |
+|          /pl          |        POST         | **POST**: Registra novo projeto de lei; **Autorização**: É necessário que o dni da pessoa que irá cadastrar a pl seja igual ao da pessoa logada; |
+|         /pec          |        POST         | **POST**: Registra novo projeto emenda constitucional; **Autorização**: É necessário que o dni da pessoa que irá cadastrar a pec seja igual ao da pessoa logada; |
+|         /plp          |        POST         | **POST**: Registra novo projeto de lei complementar; **Autorização**: É necessário que o dni da pessoa que irá cadastrar a plp seja igual ao da pessoa logada; |
 |      /pl/1/2019       |         GET         | **GET**: Exibe o projeto de lei cujo o código é PL 1/2019;                                                                                                                     |
 | /pl/1/2019/tramitacao |         GET         | **GET**: Exibe a tramitação do projeto de lei cujo o código é PL 1/2019;                                                                                                       |
-|       /votacao        |        POST         | **POST**: Realiza votação em determinada proposição. Recebe no body apenas `codigo` e `statusGovernista`;                                                                      |
+|       /votacao        |        POST         | **POST**: Realiza votação em determinada proposição. Recebe no body apenas `codigo` e `statusGovernista`; **Autorização**: É necessário que a pessoa que está logada tenha um papel de admin; |
 
 O corpo das requisições POST é o mesmo dos métodos da _facade_ definidos na [especificação](https://docs.google.com/document/d/e/2PACX-1vRMP1dmmr6DpXQECabYiR_pboa4P_XiXEywRX_wntWL0ego4KHlH25_Vsv0HB0_Io4nXn4lNI0eEaXU/pub)
 
@@ -63,8 +63,9 @@ Se houve alguma inconsistencia dos dados (e.g. cadastrar uma pessoa que já est�
 #### JSON Web Token
 
 A rota de login faz com que seja gerado um token associado à pessoa logada. Esse token garante que o usuário está autenticado. \
-Uma pessoa só pode virar depudada se ela própria estiver logada no sistema. \
-***EXPLICAÇÃO DA PARTE DE AUGUSTO*** \
+Uma pessoa só pode virar deputado se ela própria estiver logada no sistema. \
+Um deputado só pode cadastrar seus projetos de lei (pl, pec ou plp) se ele próprio estiver logado no sistema. \
+Uma pessoa só pode realizar votação, cadastrar partido e cadastrar comissão se ela própria estiver logada no sistema e possuir papel de administrador(admin). \
 A cada requisição que necessite de autoriação, é gerado um novo token utilizando o payload do token antigo. Cada token tem duração de 1h. Isso quer dizer que se passar 1h sem nenhuma requisição, o token irá se expirar e será necessário fazer o login novamente.
 
 ## Licença
