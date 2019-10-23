@@ -3,6 +3,7 @@ import { Request } from 'express'
 import { PessoaInterface } from '../interfaces/Pessoa'
 import { DeputadoInterface } from '../interfaces/Deputado'
 import { Deputado } from '../models/deputado.model'
+import sleep from 'system-sleep'
 
 export async function createPessoa (req: Request): Promise<PessoaInterface> {
   const pessoa = await Pessoa.findOne({ dni: req.body.dni }).catch(
@@ -33,6 +34,7 @@ export async function createPessoa (req: Request): Promise<PessoaInterface> {
 }
 
 export async function getAll (): Promise<PessoaInterface[]> {
+  await sleep(500)
   return Pessoa.find()
 }
 /**
