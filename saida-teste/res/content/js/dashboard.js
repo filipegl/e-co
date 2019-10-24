@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 99.79373710856929, "KoPercent": 0.2062628914307144};
+    var data = {"OkPercent": 99.91004339083501, "KoPercent": 0.089956609164991};
     var dataset = [
         {
             "label" : "KO",
@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.5613163322707669, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.27626641651031897, 500, 1500, "Pessoa sem cache"], "isController": false}, {"data": [0.9941972920696325, 500, 1500, "Partido"], "isController": false}, {"data": [0.0736981465136805, 500, 1500, "Login"], "isController": false}, {"data": [0.5580832526621491, 500, 1500, "Page Returning 404"], "isController": false}, {"data": [0.9475164011246485, 500, 1500, "Pessoa"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.8476029209440152, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.41878279118572925, 500, 1500, "Pessoa sem cache"], "isController": false}, {"data": [0.999042960442365, 500, 1500, "Partido"], "isController": false}, {"data": [0.9993570510072868, 500, 1500, "Page Returning 404"], "isController": false}, {"data": [0.9783840503672613, 500, 1500, "Pessoa"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 5333, 11, 0.2062628914307144, 2089.4575285955393, 0, 13970, 7392.4000000000015, 7899.0, 8922.459999999995, 42.45512080563627, 34.19312917943717, 16.59157258786769], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Transactions\/s", "Received", "Sent"], "items": [{"data": ["Pessoa sem cache", 1066, 10, 0.9380863039399625, 3490.6332082551594, 621, 13970, 7846.3, 8108.049999999999, 10060.919999999998, 8.79429113558553, 11.877284809017036, 3.3945365672565275], "isController": false}, {"data": ["Partido", 1034, 0, 0.0, 97.85976789168281, 1, 1940, 207.0, 258.0, 396.9500000000003, 9.476935485349244, 3.135629617027322, 3.609379725865435], "isController": false}, {"data": ["Login", 1133, 0, 0.0, 5334.400706090023, 210, 9862, 8424.2, 8458.0, 9362.280000000004, 9.038259038259039, 4.580914493023868, 3.857147655975781], "isController": false}, {"data": ["Page Returning 404", 1033, 0, 0.0, 975.6060019361072, 0, 7903, 2107.6, 2220.6, 3000.66, 9.708646616541355, 4.019986489661654, 3.6691857818374056], "isController": false}, {"data": ["Pessoa", 1067, 1, 0.09372071227741331, 252.2942830365508, 1, 7829, 267.8000000000002, 1180.0, 6048.839999999999, 8.640375738926227, 12.238837342598591, 3.2792540134828734], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 18898, 17, 0.089956609164991, 366.4769287755314, 0, 30032, 1258.0, 1480.0999999999985, 2466.0099999999984, 142.0581823648801, 46.08433894140419, 54.235137868337965], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Transactions\/s", "Received", "Sent"], "items": [{"data": ["Pessoa sem cache", 4765, 6, 0.1259181532004197, 1226.5236096537278, 617, 30031, 1626.800000000001, 1852.6999999999998, 2770.0600000000013, 38.62678339818418, 9.314518989137484, 15.031914024501459], "isController": false}, {"data": ["Partido", 4702, 4, 0.08507018290089324, 29.919608677158628, 0, 30032, 9.0, 13.0, 25.0, 37.766764925582926, 12.43153292945438, 14.371590137830218], "isController": false}, {"data": ["Page Returning 404", 4666, 3, 0.06429489927132448, 17.50064294899274, 0, 30031, 3.0, 5.0, 191.0, 37.856476410693276, 15.708137157214718, 14.300953815261044], "isController": false}, {"data": ["Pessoa", 4765, 4, 0.08394543546694648, 180.26358866736624, 0, 30031, 3.0, 6.0, 7337.020000000008, 39.719587216377974, 12.484502444963574, 15.0761221538811], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -215,7 +215,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: java.net.SocketException\/Non HTTP response message: Connection reset", 11, 100.0, 0.2062628914307144], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Test failed: code expected to equal \\\/\\n\\n****** received  : [[[200]]]\\n\\n****** comparison: [[[404]]]\\n\\n\\\/", 1, 5.882352941176471, 0.005291565244999471], "isController": false}, {"data": ["Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 16, 94.11764705882354, 0.08466504391999154], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -226,7 +226,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 5333, 11, "Non HTTP response code: java.net.SocketException\/Non HTTP response message: Connection reset", 11, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Pessoa sem cache", 1066, 10, "Non HTTP response code: java.net.SocketException\/Non HTTP response message: Connection reset", 10, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": ["Pessoa", 1067, 1, "Non HTTP response code: java.net.SocketException\/Non HTTP response message: Connection reset", 1, null, null, null, null, null, null, null, null], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 18898, 17, "Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 16, "Test failed: code expected to equal \\\/\\n\\n****** received  : [[[200]]]\\n\\n****** comparison: [[[404]]]\\n\\n\\\/", 1, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Pessoa sem cache", 4765, 6, "Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 6, null, null, null, null, null, null, null, null], "isController": false}, {"data": ["Partido", 4702, 4, "Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 4, null, null, null, null, null, null, null, null], "isController": false}, {"data": ["Page Returning 404", 4666, 3, "Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 2, "Test failed: code expected to equal \\\/\\n\\n****** received  : [[[200]]]\\n\\n****** comparison: [[[404]]]\\n\\n\\\/", 1, null, null, null, null, null, null], "isController": false}, {"data": ["Pessoa", 4765, 4, "Non HTTP response code: java.net.SocketTimeoutException\/Non HTTP response message: Read timed out", 4, null, null, null, null, null, null, null, null], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 
