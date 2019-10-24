@@ -127,6 +127,13 @@ Na rota `/pessoa`, dicionamos um `sleep` de 0.5 segundos para que possamos evide
 A rota `/pessoa/sem-cache` faz a mesma coisa que `/pessoa`, com a diferença que a primeira não implementa cache.\
 Através dos testes, fica claro o desempenho superior da rota `/pessoa`, que implementa cache.
 
+Média de tempo de resposta no teste:
+- `/pessoa`: 180.26 milissegundos
+- `/pessoa/sem-cache`: 1226.52 milissegundos
+
+![grafico](https://raw.githubusercontent.com/filipegl/e-co/master/saida-teste/Response%20Time%20Graph.png)
+
+O relatório completo se encontra em https://github.com/filipegl/e-co/blob/master/saida-teste/res/index.html
 ## Licença
 
 MIT License
