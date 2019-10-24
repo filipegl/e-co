@@ -116,16 +116,16 @@ Este projeto utiliza o [apicache](https://github.com/kwhitley/apicache) para a i
 - /partido
 - /comissao
 
-### Exemplo de execução com cache
-
-Exemplo de GET em /pessoas
-
-1. Ao fazer a requisição, os dados são obtidos do BD, processados pelo service e devolvido ao usuário.
-   - Esta resposta ficará guardada em memória (_built-in memory_) durante 5 minutos.
-2. ascfdcec
-3. fvfvfvfvf
-
 ### Experimentos de desempenho
+
+Foi usado o software [Jmeter](https://jmeter.apache.org/) para medir a performance.
+Na rota `/pessoa`, dicionamos um `sleep` de 0.5 segundos para que possamos evidenciar o desempenho do cache nos testes.
+
+- Simulação de **100 usuários** com **65 interações**
+- Teste com duração de **120 segundos**
+
+A rota `/pessoa/sem-cache` faz a mesma coisa que `/pessoa`, com a diferença que a primeira não implementa cache.\
+Através dos testes, fica claro o desempenho superior da rota `/pessoa`, que implementa cache.
 
 ## Licença
 
