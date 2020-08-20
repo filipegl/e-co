@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "apicache": "^1.5.2",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "eslint-utils": "^1.4.2",
